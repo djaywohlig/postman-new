@@ -31,6 +31,7 @@ jobs:
 
     - name: Run Collection
       run: |
+        ls
         newman run "Cricket_Bet_Flow_Matched.postman_collection.json" -r htmlextra --reporter-htmlextra-export SampleArtifact/report.html
 
     - name: Publish Report
