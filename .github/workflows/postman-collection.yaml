@@ -32,10 +32,10 @@ jobs:
     - name: Run Collection
       run: |
         ls
-        newman run "Cricket_Bet_Flow_Matched.postman_collection.json" -r htmlextra --reporter-htmlextra-export SampleArtifact/report.html
+        newman run "Cricket_Bet_Flow_Matched.postman_collection.json"
 
-    - name: Publish Report
-      uses: actions/upload-artifact@v3
-      with:
-        name: Reports
-        path: SampleArtifact
+    # - name: Publish Report
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: Reports
+    #     path: SampleArtifact
