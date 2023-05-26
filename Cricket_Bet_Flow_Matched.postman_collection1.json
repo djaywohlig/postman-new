@@ -44,7 +44,7 @@
 							"   const responseBody = pm.response.json();\r",
 							"\r",
 							"   // Define an array of sensitive properties\r",
-							"   const sensitiveProperties = [\"accessToken\", \"password\"];\r",
+							"   const sensitixveProperties = [\"accessToken\", \"password\"];\r",
 							"\r",
 							"   // Loop through each sensitive property and check if it exists in the response body\r",
 							"   sensitiveProperties.forEach(function (property) {\r",
