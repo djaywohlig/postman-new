@@ -44,6 +44,6 @@ jobs:
       - uses: matt-ball/newman-action@master
         with:
           apiKey: "PMAK-64702cfa76de510a67124f55-b6a5c77fa2eb50078886753952fec1eca9"
-          collection: Cricket_Bet_Flow_Matched
+          collection: Cricket_Bet_Flow_Matched.postnam_collection.json
           environment: 22939286-f59f94ad-afe0-4adf-96a6-71d5c1f00da9
 
