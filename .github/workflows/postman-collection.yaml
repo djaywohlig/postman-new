@@ -43,6 +43,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: matt-ball/newman-action@master
         with:
-          apiKey: "PMAK-646e00db596ece2e145702f2-3a119dc11746a6c16ac80319059905cb0e"
-          collection: Cricket_Bet_Flow_Matched.postman_collection.json
-          environment: 22939286-716465fd-0e15-4434-a292-98d0face0105
+          apiKey: "PMAK-64702cfa76de510a67124f55-b6a5c77fa2eb50078886753952fec1eca9"
+          collection: Cricket_Bet_Flow_Matched
+          environment: 22939286-f59f94ad-afe0-4adf-96a6-71d5c1f00da9
+
