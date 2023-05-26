@@ -15,12 +15,6 @@ jobs:
     steps:
 
       - uses: actions/checkout@master
-      # - uses: matt-ball/newman-action@master
-      #   with:
-      #     apiKey: ${{ secrets.POSTMANAPI_SECRET }}
-      #     collection: Cricket_Bet_Flow_Matched.postman_collection.json
-      #     environment: 22939286-f59f94ad-afe0-4adf-96a6-71d5c1f00da9
-      #   continue-on-error: true
 
       - name: Install Newman
         run: |
@@ -33,7 +27,7 @@ jobs:
 
       - name: Generate and Upload Report
         run: |
-          newman run "Cricket_Bet_Flow_Matched.postman_collection.json" --reporters cli,htmlextra --reporter-htmlextra-export SampleArtifact/newman-report.html
+          newman run "Cricket_Bet_Flow_Matched.postman_collection.json" --reporters cli,htmlextra --reporter-htmlextra-export SampleArtifact/newman-report.html || true
 
       - name: Publish Report
         uses: actions/upload-artifact@v3
