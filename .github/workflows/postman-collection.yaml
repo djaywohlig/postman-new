@@ -26,8 +26,13 @@ jobs:
           environment: 22939286-f59f94ad-afe0-4adf-96a6-71d5c1f00da9
         continue-on-error: true
 
+      - name: list contents
+        run: |
+          ls
+
       - name: Publish Report
         uses: actions/upload-artifact@v3
         with:
           name: Reports
+          path: SampleArtifact
 
