@@ -44,7 +44,7 @@ jobs:
           node-version: 14
   
       - name: Install k6
-        run: npm install -g k6
+        uses: loadimpact/k6/action@v2.1.0
 
       - name: Generate and Upload Report
         run: |
