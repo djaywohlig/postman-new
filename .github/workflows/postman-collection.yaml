@@ -43,25 +43,21 @@ jobs:
         with:
           node-version: 14
   
-      - name: Install k6
-        run: |
-          curl https://github.com/grafana/k6/releases/download/v0.44.0/k6-v0.44.0-linux-amd64.tar.gz -L | tar xvz --strip-components 1
-          k6 version
-
-      - name: Install packages
-        run: |
-          npm install
+      - name: Run local k6 test
+        uses: k6io/action@v0.1
+        with:
+         filename: ./Collections/Cricket_Bet_Flow_Matched.js
 
 
-      - name: Generate and Upload Report
-        run: |
-          k6 run Collections/Cricket_Bet_Flow_Matched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Cricket_Bet_Flow_Matched-report.json
-          k6 run Collections/Cricket_Bet_Flow_Unmatched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Cricket_Bet_Flow_Unmatched-report.json
-          k6 run Collections/RESTful_API_Basics.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/RESTful_API_Basics-report.json
-          k6 run Collections/Soccer_Bet_Flow_Matched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Soccer_Bet_Flow_Matched-report.json
-          k6 run Collections/Soccer_Bet_Flow_Unmatched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Soccer_Bet_Flow_Unmatched-report.json
-          k6 run Collections/Tennis_Bet_Flow_Matched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Tennis_Bet_Flow_Matched-report.json
-          k6 run Collections/Tennis_Bet_Flow_Unmatched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Tennis_Bet_Flow_Unmatched-report.json
+      # - name: Generate and Upload Report
+      #   run: |
+      #     k6 run Collections/Cricket_Bet_Flow_Matched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Cricket_Bet_Flow_Matched-report.json
+      #     k6 run Collections/Cricket_Bet_Flow_Unmatched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Cricket_Bet_Flow_Unmatched-report.json
+      #     k6 run Collections/RESTful_API_Basics.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/RESTful_API_Basics-report.json
+      #     k6 run Collections/Soccer_Bet_Flow_Matched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Soccer_Bet_Flow_Matched-report.json
+      #     k6 run Collections/Soccer_Bet_Flow_Unmatched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Soccer_Bet_Flow_Unmatched-report.json
+      #     k6 run Collections/Tennis_Bet_Flow_Matched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Tennis_Bet_Flow_Matched-report.json
+      #     k6 run Collections/Tennis_Bet_Flow_Unmatched.js --env=Env/PlayEnv.postman_environment.json --out json=SampleArtifact/Tennis_Bet_Flow_Unmatched-report.json
 
       - name: Publish Report
         uses: actions/upload-artifact@v3
