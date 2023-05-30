@@ -45,10 +45,11 @@ jobs:
   
       - name: Install k6
         run: |
-          wget -O k6.tar.gz https://github.com/loadimpact/k6/releases/latest/download/k6-ubuntu-amd64.tar.gz
-          tar -xvf k6.tar.gz
-          chmod +x k6-*/k6
-          sudo mv k6-*/k6 /usr/local/bin/k6
+          curl https://github.com/grafana/k6/releases/download/v0.44.0/k6-v0.44.0-linux-amd64.tar.gz -L | tar xvz --strip-components 1
+
+      - name: Install packages
+        run: |
+          npm install
 
 
       - name: Generate and Upload Report
