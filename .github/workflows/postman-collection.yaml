@@ -44,7 +44,12 @@ jobs:
           node-version: 14
   
       - name: Install k6
-        uses: loadimpact/k6/action@v2.1.0
+        run: |
+          curl -O -L https://github.com/k6io/k6/releases/latest/download/k6-linux-amd64.tar.gz
+          tar -xzf k6-linux-amd64.tar.gz
+          chmod +x k6
+          sudo mv k6 /usr/local/bin/
+  
 
       - name: Generate and Upload Report
         run: |
