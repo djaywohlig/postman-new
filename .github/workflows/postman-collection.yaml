@@ -46,7 +46,7 @@ jobs:
       - name: Run local k6 test
         uses: k6io/action@v0.1
         with:
-         filename: ./Collections/Cricket_Bet_Flow_Matched.js
+         filename: Collections/Cricket_Bet_Flow_Matched.js
 
 
       # - name: Generate and Upload Report
