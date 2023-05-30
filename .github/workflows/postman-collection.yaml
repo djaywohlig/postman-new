@@ -45,11 +45,10 @@ jobs:
   
       - name: Install k6
         run: |
-          curl -O -L https://github.com/k6io/k6/releases/latest/download/k6-linux-amd64.tar.gz
-          tar -xzf k6-linux-amd64.tar.gz
+          wget -O k6 https://github.com/k6io/k6/releases/latest/download/k6-linux-amd64
           chmod +x k6
           sudo mv k6 /usr/local/bin/
-  
+
 
       - name: Generate and Upload Report
         run: |
